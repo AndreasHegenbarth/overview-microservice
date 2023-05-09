@@ -1,11 +1,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const { randomBytes } = require('crypto');
+const cors = require('cors');
 
 const app = express();
 // This is a middleware that will parse the body of the request
 // and assign it to the req.body property
 app.use(bodyParser.json());
+app.use(cors());
 
 const commentsByPostId = {};
 
